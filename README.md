@@ -15,10 +15,10 @@ This repository provides supervised fine-tuning (SFT) and closed-loop evaluation
 
 Each directory contains `train.jsonl` and `test.jsonl`. Image paths in the JSONL are relative to the repository root and begin with `data/images/`.
 
-The companion Hugging Face dataset contains image archives for Maze Planning, Maze Navigation, and Mini-BEHAVIOR. Replace `NAMESPACE` with the dataset owner's namespace. For a private dataset, obtain access and run `hf auth login` before downloading.
+The [VMFL image dataset](https://huggingface.co/datasets/DuYuxuandyx/VMFL-images) on Hugging Face contains image archives for Maze Planning, Maze Navigation, and Mini-BEHAVIOR.
 
 ```bash
-export HF_DATASET_REPO=NAMESPACE/VMFL-images
+export HF_DATASET_REPO=DuYuxuandyx/VMFL-images
 mkdir -p .cache/vmfl-images data/images
 hf download "$HF_DATASET_REPO" --repo-type dataset --local-dir .cache/vmfl-images
 (cd .cache/vmfl-images && sha256sum -c SHA256SUMS)
